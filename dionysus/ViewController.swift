@@ -8,12 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = .green
+        setupConstraints()
     }
+    
+    private func setupConstraints() {
+        self.view.translatesAutoresizingMaskIntoConstraints = false
 
-
+    }
 }
-
