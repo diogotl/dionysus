@@ -26,7 +26,7 @@ class EventsListViewModel {
     func fetchEvents(){
         onLoading?(true)
         
-        guard let url = URL(string: "http://192.168.1.110:3333/events") else {
+        guard let url = URL(string: "https://api-exam-pdm-v2.up.railway.app/events") else {
             onLoading?(false)
             print("URL inválida")
             onError?(NSError(domain: "URL inválida", code: 0))

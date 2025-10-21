@@ -32,8 +32,18 @@ class EventDetailsViewController: UIViewController {
         
         viewModel.onDetailsLoaded = { [weak self] eventDetails in
             print("Dados recebidos:", eventDetails)
+            self?.contentView.title.text = eventDetails.title
         }
-        viewModel.fetchDetails()
+        viewModel.fetchDetails(
+            completion: { result in
+                switch result {
+                case .success(let data):
+                    print("Dados recebidos:", data)
+                case .failure(let error):
+                    print("Erro ao buscar detalhes do evento:", error)
+                }
+            }
+        )
 
     }
 }

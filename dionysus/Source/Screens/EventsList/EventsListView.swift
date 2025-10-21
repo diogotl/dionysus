@@ -22,7 +22,7 @@ class EventsListView:UIView {
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .black
         return tableView
     }()
         

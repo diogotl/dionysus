@@ -19,9 +19,26 @@ class EventDetailsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView() {
+    let title: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    func setupView() {
         
-        self.backgroundColor = .cyan
+        self.addSubview(title)
+        
+        NSLayoutConstraint.activate([
+            title.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            title.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20)
+        ])
+
+
+        
+        
     }
 }
 
